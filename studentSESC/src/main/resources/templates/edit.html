@@ -1,0 +1,75 @@
+<!-- Section: Design Block -->
+<title>Register</title>
+<section class=" text-center text-lg-start">
+    <style>
+        .rounded-t-5 {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+
+        @media (min-width: 992px) {
+            .rounded-tr-lg-0 {
+                border-top-right-radius: 0;
+            }
+
+            .rounded-bl-lg-5 {
+                border-bottom-left-radius: 0.5rem;
+            }
+        }
+    </style>
+    <script>
+        var message = "[[${message}]]";
+
+        // Display the message in a dialogue box when the page is loaded
+        window.onload = function() {
+            if (message !== "") {
+                alert(message);
+            }
+        };
+    </script>
+    <div class="card mb-3">
+        <div class="row g-0 d-flex align-items-center">
+            <div class="col-lg-8">
+                <div class="card-body py-5 px-md-5">
+
+                    <form action="#" th:action="@{/register}" method="post" th:object="${student}">
+                        <!-- Username input -->
+                        <div class="form-group">
+                            <input type="text" id="userName" class="form-control" required="required" th:field="*{userName}"/>
+                            <label class="form-label" for="userName">Username</label>
+                        </div>
+                        <!-- Password input -->
+                        <div class="form-group">
+                            <input type="password" id="password" class="form-control" required="required" th:field="*{password}"/>
+                            <label class="form-label" for="password">Password</label>
+                        </div>
+                        <!-- Forename input -->
+                        <div class="form-group">
+                            <input type="text" id="first_name" class="form-control" required="required" th:field="*{firstName}"/>
+                            <label class="form-label" for="first_name">Forename</label>
+                        </div>
+                        <!-- Surname input -->
+                        <div class="form-group">
+                            <input type="text" id="last_name" class="form-control" required="required" th:field="*{lastName}"/>
+                            <label class="form-label" for="last_name">Surname</label>
+                        </div>
+
+                        <!-- Register button -->
+                        <a href="http://localhost:7777/home">
+                            <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+                        </a>
+
+                        <!-- Sign in button -->
+                        <a href="http://localhost:7777/login">
+                            <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+                        </a>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section: Design Block -->

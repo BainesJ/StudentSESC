@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-05-15T02:10:10" hostname="DESKTOP-5TLKU35" time="0.103">
+  <properties/>
+  <testcase name="checkLogin_ShouldReturnHomePage_WhenLoginIsSuccessful()" classname="uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest" time="0.053"/>
+  <testcase name="register_ShouldReturnRegisterPageWithError_WhenUsernameIsTaken()" classname="uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest" time="0.001"/>
+  <testcase name="myCourses_ShouldReturnMyCoursesPageWithEmptyCourseList_WhenStudentIsNotEnrolledInAnyCourses()" classname="uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest" time="0.026"/>
+  <testcase name="checkLogin_ShouldReturnLoginPageWithError_WhenUserDoesNotExist()" classname="uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest" time="0.001"/>
+  <testcase name="register_ShouldReturnLoginWithSuccessMessage_WhenRegistrationIsSuccessful()" classname="uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest" time="0.003"/>
+  <testcase name="homePage_ShouldReturnHomePageWithCurrentUserInformation()" classname="uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest" time="0.002"/>
+  <testcase name="logOut_ShouldClearCurrentUserAndRedirectToLoginPage()" classname="uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest" time="0.003"/>
+  <testcase name="updateDetails_ShouldReturnHomePageAfterUpdatingStudentDetails()" classname="uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest" time="0.002"/>
+  <testcase name="checkLogin_ShouldReturnLoginPageWithError_WhenIncorrectPasswordIsProvided()" classname="uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest" time="0.001"/>
+  <testcase name="register_ShouldReturnRegisterPageWithStudentObject()" classname="uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest" time="0.0"/>
+  <testcase name="logIn_ShouldReturnLoginPageWithStudentObject()" classname="uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

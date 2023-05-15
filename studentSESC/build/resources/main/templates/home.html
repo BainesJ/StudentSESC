@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Home Page</title>
+</head>
+<body>
+<style>
+  .error-message {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 0.25rem;
+  }
+  .success-message {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #28a745;
+    color: #fff;
+    border: 1px solid #28a745;
+    border-radius: 0.25rem;
+  }
+</style>
+<div th:insert="~{fragments/navbar}"></div>
+<div class="container">
+  <h2 style="text-align: center;">Student Home Page</h2>
+  <form th:action="@{/home}" method="post" style="text-align: center" th:object="${student}">
+    <div class="form-group">
+      <label for="studentId">Student ID</label>
+      <input id="studentId" type="text" th:value="${student.studentId}" disabled>
+      <input type="hidden" th:field="*{studentId}"/>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" type="text" th:value="${student.userName}" th:field="*{userName}">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" th:value="${student.password}" th:field="*{password}">
+    </div>
+    <div class="form-group">
+      <label for="forename">Forename</label>
+      <input id="forename" type="text" th:value="${student.firstName}" th:field="*{firstName}">
+    </div>
+    <div class="form-group">
+      <label for="surname">Surname</label>
+      <input id="surname" type="text" th:value="${student.lastName}" th:field="*{lastName}">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block mb-4">Update</button>
+    </div>
+  </form>
+  <div class="success-message" th:if="${message}">
+    <p th:text="${message}"></p>
+  </div>
+  <div class="error-message" th:if="${error}">
+    <p th:text="${error}"></p>
+  </div>
+</div>
+</body>
+</html>

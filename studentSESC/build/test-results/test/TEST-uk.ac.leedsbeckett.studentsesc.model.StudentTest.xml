@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="uk.ac.leedsbeckett.studentsesc.model.StudentTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2023-05-15T02:10:10" hostname="DESKTOP-5TLKU35" time="0.016">
+  <properties/>
+  <testcase name="setId_ShouldSetId()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.002"/>
+  <testcase name="getLastName_ShouldReturnLastName()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.001"/>
+  <testcase name="getPassword_ShouldReturnPassword()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.0"/>
+  <testcase name="setUserName_ShouldSetUserName()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.0"/>
+  <testcase name="setPassword_ShouldSetPassword()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.0"/>
+  <testcase name="setFirstName_ShouldSetFirstName()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.0"/>
+  <testcase name="enrolInCourse_ShouldAddCourseToCoursesEnrolledIn()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.0"/>
+  <testcase name="getCoursesEnrolledIn_ShouldReturnCoursesEnrolledIn()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.0"/>
+  <testcase name="getStudentId_ShouldReturnStudentId()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.0"/>
+  <testcase name="getUserName_ShouldReturnUserName()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.0"/>
+  <testcase name="getFirstName_ShouldReturnFirstName()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.0"/>
+  <testcase name="getOutstandingBalance_ShouldReturnOutstandingBalance()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.0"/>
+  <testcase name="getId_ShouldReturnId()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.001"/>
+  <testcase name="setStudentId_ShouldSetStudentId()" classname="uk.ac.leedsbeckett.studentsesc.model.StudentTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

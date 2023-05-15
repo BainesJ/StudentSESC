@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="uk.ac.leedsbeckett.studentsesc.service.CourseServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-05-15T02:10:10" hostname="DESKTOP-5TLKU35" time="0.072">
+  <properties/>
+  <testcase name="getCourseByID_NonExistingID_ThrowsException()" classname="uk.ac.leedsbeckett.studentsesc.service.CourseServiceTest" time="0.069"/>
+  <testcase name="getAllCourses_ReturnsListOfCourses()" classname="uk.ac.leedsbeckett.studentsesc.service.CourseServiceTest" time="0.001"/>
+  <testcase name="getCourseByID_ExistingID_ReturnsCourse()" classname="uk.ac.leedsbeckett.studentsesc.service.CourseServiceTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

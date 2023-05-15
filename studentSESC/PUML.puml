@@ -1,0 +1,168 @@
+@startuml
+class uk.ac.leedsbeckett.studentsesc.service.IntegrationService {
+- RestTemplate restTemplate
++ Invoice createCourseInvoice(Invoice)
++ String registerLibraryStudent(Student)
++ List<String> getOutstandingReferences(String)
+}
+interface uk.ac.leedsbeckett.studentsesc.model.StudentRepository {
+~ Student findStudentById(Long)
+~ Student findStudentByStudentId(String)
+~ Student findStudentByUserName(String)
+~ Boolean existsStudentByStudentId(String)
+~ Boolean existsStudentByUserName(String)
+~ Boolean existsStudentByUserNameAndPassword(String,String)
+}
+class uk.ac.leedsbeckett.studentsesc.model.Student {
+- Long id
+- String studentId
+- String userName
+- String password
+- String firstName
+- String lastName
+- Boolean outstandingBalance
+~ Set<Course> coursesEnrolledIn
++ void enrolInCourse(Course)
+}
+class uk.ac.leedsbeckett.studentsesc.StudentSescApplicationTests {
+~ void contextLoads()
+}
+class uk.ac.leedsbeckett.studentsesc.controller.CourseControllerTest {
+- CourseService courseService
+- EnrolmentService enrolmentService
+~ void setup()
+~ void viewAllCourses()
+~ void searchCoursesPost()
+~ void viewCourse()
+~ void enrolCourse()
+}
+class uk.ac.leedsbeckett.studentsesc.service.StudentService {
+- Student student
+- List<String> result
+- StudentRepository studentRepository
+- RestTemplate restTemplate
+- IntegrationService integrationService
++ void setCurrentUser(Student)
++ void clearCurrentUser()
++ Student getCurrentUser()
++ Boolean studentExistsByUserName(String)
++ Boolean studentExistsByStudentId(String)
++ Student getStudentByUserName(String)
++ Student getStudentById(Long)
++ Student getStudentByStudentId(String)
++ Boolean studentExistsByUserNameAndPassword(String,String)
++ void registerStudent(Student)
++ Student updateStudent(Student)
++ List<String> getOutstandingReferences()
+}
+class uk.ac.leedsbeckett.studentsesc.model.Invoice {
+- Long id
+- String reference
+- Double amount
+- LocalDate due
+- String type
+- String status
+- String studentId
+}
+class uk.ac.leedsbeckett.studentsesc.controller.StudentController {
+- StudentService studentService
++ ModelAndView register()
++ ModelAndView register(Student)
++ ModelAndView logIn()
++ ModelAndView checkLogin(Student)
++ ModelAndView logOut()
++ ModelAndView homePage()
++ ModelAndView updateDetails(Student)
++ ModelAndView myCourses()
++ ModelAndView graduation()
+}
+class uk.ac.leedsbeckett.studentsesc.StudentSescApplication {
++ {static} void main(String[])
+}
+interface uk.ac.leedsbeckett.studentsesc.model.CourseRepository {
+~ Course findCourseById(Long)
+}
+class uk.ac.leedsbeckett.studentsesc.service.CourseServiceTest {
+- CourseRepository courseRepository
+- CourseService courseService
+~ void setUp()
+~ void getAllCourses_ReturnsListOfCourses()
+~ void getCourseByID_ExistingID_ReturnsCourse()
+~ void getCourseByID_NonExistingID_ThrowsException()
+}
+class uk.ac.leedsbeckett.studentsesc.MiscellaneousBeans {
+~ CommandLineRunner initDatabase(CourseRepository,StudentRepository)
++ RestTemplate restTemplate(RestTemplateBuilder)
+}
+class uk.ac.leedsbeckett.studentsesc.controller.StudentControllerTest {
+- StudentService studentService
+- StudentController studentController
+~ void setUp()
+~ void register_ShouldReturnRegisterPageWithStudentObject()
+~ void register_ShouldReturnRegisterPageWithError_WhenUsernameIsTaken()
+~ void register_ShouldReturnLoginWithSuccessMessage_WhenRegistrationIsSuccessful()
+~ void logIn_ShouldReturnLoginPageWithStudentObject()
+~ void checkLogin_ShouldReturnHomePage_WhenLoginIsSuccessful()
+~ void checkLogin_ShouldReturnLoginPageWithError_WhenIncorrectPasswordIsProvided()
+~ void checkLogin_ShouldReturnLoginPageWithError_WhenUserDoesNotExist()
+~ void logOut_ShouldClearCurrentUserAndRedirectToLoginPage()
+~ void homePage_ShouldReturnHomePageWithCurrentUserInformation()
+~ void updateDetails_ShouldReturnHomePageAfterUpdatingStudentDetails()
+~ void myCourses_ShouldReturnMyCoursesPageWithEmptyCourseList_WhenStudentIsNotEnrolledInAnyCourses()
+}
+class uk.ac.leedsbeckett.studentsesc.model.Course {
+- Long id
+- String title
+- String description
+- Double fee
+~ Set<Student> studentsEnrolledInCourse
+}
+class uk.ac.leedsbeckett.studentsesc.service.EnrolmentService {
+- StudentRepository studentRepository
+- CourseRepository courseRepository
+- StudentService studentService
+- IntegrationService integrationService
++ String enrolStudentInCourse(Course)
++ void newStudentCheck()
++ boolean studentEnrolledInCourse(Student,Course)
++ String generateID()
++ Student getStudent()
++ List<Course> queryCourses(String)
++ Invoice createCourseInvoice(Student,Course)
+}
+class uk.ac.leedsbeckett.studentsesc.controller.CourseController {
+- EnrolmentService enrolmentService
+- CourseService courseService
++ ModelAndView viewAllCourses()
++ ModelAndView searchCoursesPost(String)
++ ModelAndView viewCourse(Long)
++ ModelAndView EnrolCourse(Long)
+}
+class uk.ac.leedsbeckett.studentsesc.model.StudentTest {
+- Student student
+~ void setUp()
+~ void enrolInCourse_ShouldAddCourseToCoursesEnrolledIn()
+~ void getId_ShouldReturnId()
+~ void getStudentId_ShouldReturnStudentId()
+~ void getUserName_ShouldReturnUserName()
+~ void getPassword_ShouldReturnPassword()
+~ void getFirstName_ShouldReturnFirstName()
+~ void getLastName_ShouldReturnLastName()
+~ void getOutstandingBalance_ShouldReturnOutstandingBalance()
+~ void getCoursesEnrolledIn_ShouldReturnCoursesEnrolledIn()
+~ void setId_ShouldSetId()
+~ void setStudentId_ShouldSetStudentId()
+~ void setUserName_ShouldSetUserName()
+~ void setPassword_ShouldSetPassword()
+~ void setFirstName_ShouldSetFirstName()
+}
+class uk.ac.leedsbeckett.studentsesc.service.CourseService {
+- CourseRepository courseRepository
++ List<Course> getAllCourses()
++ Course getCourseByID(Long)
+}
+
+
+org.springframework.data.jpa.repository.JpaRepository <|-- uk.ac.leedsbeckett.studentsesc.model.StudentRepository
+org.springframework.data.jpa.repository.JpaRepository <|-- uk.ac.leedsbeckett.studentsesc.model.CourseRepository
+@enduml
